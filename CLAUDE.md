@@ -4,7 +4,7 @@ Leia o `README.md` primeiro. Resumo do que importa para trabalhar aqui:
 
 ## O que é
 
-Sistema de agendamento para salões (app da cliente + painel do salão), hoje como **demonstração estática** publicada no GitHub Pages. Marca: **Studio Mica Araujo**. É o mesmo sistema do salão Favorita (repositório `eduardoamoriminfoprodutos-sys/favorita`): o código de `cliente/`, `salao/` e `comum/` é igual nos dois; só `marca.js` e `logo.png` mudam. O dono do projeto é o Eduardo (fala português, não é programador: explique em linguagem simples, sem jargão).
+Sistema de agendamento para salões (app da cliente + painel do salão), hoje como **demonstração estática** publicada no GitHub Pages. Marca: **Studio Mica Araujo**. Começou como cópia do sistema do salão Favorita, mas agora evolui separado (ver "Este salão é independente"). O dono do projeto é o Eduardo (fala português, não é programador: explique em linguagem simples, sem jargão).
 
 ## Regras
 
@@ -16,6 +16,11 @@ Sistema de agendamento para salões (app da cliente + painel do salão), hoje co
 - **Depois de mudar o app, rode `testes/testar.js` e `testes/testar-abas.js`** (ver README) e só publique com tudo OK. Se mudar tela, refaça os prints com `prints/gerar-prints.js`.
 - Dinheiro e preço, no sistema de verdade, são **calculados no servidor**, nunca no celular da cliente.
 - Nada de senha, token ou chave do Mercado Pago no repositório.
+
+## Este salão é independente
+
+- **Este repositório é só do Studio Mica Araujo.** O sistema nasceu igual ao do Favorita (repositório `favorita`), mas agora cada cliente evolui separado: pedido do Studio Mica Araujo muda **só aqui**. Nunca copie código daqui para o `favorita` nem de lá para cá, a não ser que o Eduardo peça com essas palavras.
+- **Artefato próprio** (demonstração para apresentar, em dois aparelhos): https://claude.ai/artifact/G1RVkDbxgaU8sq9cRSxr6B. Para atualizar depois de mudar o app: `python3 ferramentas/montar-artefato.py <saída.html>` (monta o arquivo único só a partir deste repositório) e republique **nesse mesmo link**. Nunca publique o artefato de um salão no link do outro.
 
 ## Tarefa atual
 

@@ -1,6 +1,6 @@
 # Sistema de agendamento para salões · Studio Mica Araujo
 
-> Mesmo sistema do salão Favorita (repositório `favorita`), com a marca do Studio: logo em monograma, grafite e rosé queimado sobre cinza-pérola. Para trazer melhorias do sistema base, copie `cliente/`, `salao/`, `comum/`, `demo/`, `api/` e `testes/` de lá; a marca fica só em `marca.js` e `logo.png`.
+> Começou como cópia do sistema do salão Favorita, com a marca do Studio (logo em monograma, grafite e rosé queimado sobre cinza-pérola). **Agora evolui separado:** personalização pedida pelo Studio entra só aqui, sem mexer na Favorita.
 
 App da cliente + painel do salão, na marca **Studio Mica Araujo**. Hoje é uma **demonstração que roda só no navegador** (sem servidor): serve para apresentar à dona e validar o fluxo. O sistema também é usado em outros salões trocando só a marca.
 
@@ -39,6 +39,7 @@ Depois de ligar o GitHub Pages (ver abaixo):
 | `comum/dados.js` | **Única camada de dados.** Hoje grava no navegador; no sistema de verdade passa a falar com a API da VPS (ver `docs/ENTREGA-VPS.md`). |
 | `comum/estilos.css` | Todo o visual (redesign do Claude Design). As cores são variáveis em `:root`. |
 | `docs/FUTURO-ACESSO-COLABORADORAS.md` | **Proposta futura (não implementada):** login de cada profissional com limites (sem Financeiro, Equipe e cadastros), concluir os próprios atendimentos e "Minhas avaliações". Para a negociação. |
+| `ferramentas/montar-artefato.py` | Monta o arquivo único da demonstração deste salão para publicar no artefato próprio dele (https://claude.ai/artifact/G1RVkDbxgaU8sq9cRSxr6B). |
 | `docs/ENTREGA-VPS.md` | **O que fazer para pôr no ar sincronizado pela VPS**: ambiente exclusivo do Studio, banco, rotas da API, Pix e sincronização. |
 | `index.html` | Capa da apresentação. |
 | `demo/` | Os dois apps juntos, com o botão "Ver como" (para apresentar). |
