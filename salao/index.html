@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F1F0EE">
+<title>Painel do salão</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../comum/estilos.css">
+<link rel="icon" href="../logo.png">
+<script src="../marca.js"></script>
+</head>
+<body>
+<div class="app" id="app">
+  <div id="root"></div>
+</div>
+<div id="bottom"></div>
+<div id="layer"></div>
+<input type="file" id="foto-input" accept="image/*" hidden>
+<div class="toast" id="toast" hidden></div>
+<script>window.FAV_MODO = "salao"; document.title = window.MARCA.nome + " · Painel do salão";</script>
+<script src="../comum/nucleo.js"></script>
+<script src="../comum/dados.js"></script>
+<script src="../salao/salao.js"></script>
+<script>iniciar();</script>
+</body>
+</html>

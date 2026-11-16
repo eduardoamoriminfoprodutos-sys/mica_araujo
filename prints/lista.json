@@ -1,0 +1,137 @@
+[
+ [
+  "cliente",
+  "01-perfil-vazio",
+  "Perfil sem dados"
+ ],
+ [
+  "cliente",
+  "02-perfil-com-foto",
+  "Perfil com foto e dados"
+ ],
+ [
+  "cliente",
+  "03-catalogo",
+  "Catálogo: saudação, categorias, serviços"
+ ],
+ [
+  "cliente",
+  "04-escolher-opcao",
+  "Folha para escolher a opção (Selagem curto/médio/longo)"
+ ],
+ [
+  "cliente",
+  "05-sacola-flutuante",
+  "Sacola flutuante dourada com 2 serviços"
+ ],
+ [
+  "cliente",
+  "06-catalogo-unhas",
+  "Catálogo, categoria Unhas"
+ ],
+ [
+  "cliente",
+  "07-agendar",
+  "Agendar: stepper, sacola, profissional, dia, horário"
+ ],
+ [
+  "cliente",
+  "08-agendar-escolhido",
+  "Agendar com Ana, dia e horário escolhidos"
+ ],
+ [
+  "cliente",
+  "09-confirmar-pix",
+  "Confirmar: resumo, pagamento Pix, observação"
+ ],
+ [
+  "cliente",
+  "10-confirmar-no-salao",
+  "Confirmar: no salão, cartão ou dinheiro"
+ ],
+ [
+  "cliente",
+  "11-pix",
+  "Pix: valor, QR, copia e cola"
+ ],
+ [
+  "cliente",
+  "12-meus-horarios-aguardando",
+  "Meus horários: aguardando salão"
+ ],
+ [
+  "salao",
+  "01-pedidos",
+  "Pedidos: números do dia e pedidos para aprovar"
+ ],
+ [
+  "salao",
+  "02-resumo-do-pedido",
+  "Resumo do pedido: cliente, serviço, observação, pagamento, comprovante, mensagens, histórico"
+ ],
+ [
+  "salao",
+  "03-comprovante-zoom",
+  "Comprovante do Pix com zoom"
+ ],
+ [
+  "salao",
+  "04-reprovar-motivo",
+  "Reprovar: folha com motivos"
+ ],
+ [
+  "salao",
+  "05-pedido-aprovado",
+  "Pedido aprovado"
+ ],
+ [
+  "salao",
+  "06-agenda",
+  "Agenda: dias, números, filtro por profissional, linha do tempo"
+ ],
+ [
+  "salao",
+  "07-financeiro",
+  "Financeiro: faturamento do dia, formas, lançamentos"
+ ],
+ [
+  "salao",
+  "08-fechar-caixa",
+  "Fechar caixa: resumo por forma"
+ ],
+ [
+  "salao",
+  "09-caixa-fechado",
+  "Caixa fechado"
+ ],
+ [
+  "salao",
+  "10-servicos",
+  "Serviços por categoria"
+ ],
+ [
+  "salao",
+  "11-editar-servico",
+  "Editar serviço com opções"
+ ],
+ [
+  "salao",
+  "12-categorias",
+  "Categorias"
+ ],
+ [
+  "salao",
+  "13-equipe",
+  "Equipe"
+ ],
+ [
+  "salao",
+  "14-editar-profissional",
+  "Editar profissional: foto, especialidades, horário, cor na agenda"
+ ],
+ [
+  "cliente",
+  "13-meus-horarios-respostas",
+  "Meus horários: confirmado e não aprovado"
+ ]
+]

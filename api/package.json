@@ -1,0 +1,15 @@
+{
+  "name": "agenda-salao-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Servidor do sistema de agendamento para salões (um processo e um banco por salão). Modelo: backend do DM Espetinho.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "fastify": "^4.28.1",
+    "pg": "^8.12.0"
+  }
+}

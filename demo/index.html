@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F1F0EE">
+<title>Demonstração</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../comum/estilos.css">
+<link rel="icon" href="../logo.png">
+<script src="../marca.js"></script>
+</head>
+<body>
+<div class="app" id="app">
+  <div class="demo" aria-label="Controle do protótipo">
+    <small>Ver como</small>
+    <div class="seg" role="group">
+      <button id="as-cliente" type="button" aria-pressed="true">Cliente</button>
+      <button id="as-salao" type="button" aria-pressed="false">Salão (dona)</button>
+    </div>
+    <button class="link" id="zerar-demo" type="button" title="Volta a demonstração ao início">Zerar</button>
+  </div>
+  <div id="root"></div>
+</div>
+<div id="bottom"></div>
+<div id="layer"></div>
+<input type="file" id="foto-input" accept="image/*" hidden>
+<div class="toast" id="toast" hidden></div>
+<script>window.FAV_MODO = "demo"; document.title = window.MARCA.nome + " · Demonstração";</script>
+<script src="../comum/nucleo.js"></script>
+<script src="../comum/dados.js"></script>
+<script src="../cliente/cliente.js"></script>
+<script src="../salao/salao.js"></script>
+<script>iniciar();</script>
+</body>
+</html>

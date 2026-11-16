@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F1F0EE">
+<title>Agendamento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="comum/estilos.css">
+<link rel="icon" href="logo.png">
+<script src="marca.js"></script>
+<style>
+  .capa { max-width: 440px; margin: 0 auto; padding: 28px max(18px, env(safe-area-inset-right, 0px)) 40px max(18px, env(safe-area-inset-left, 0px)); display: flex; flex-direction: column; gap: 16px; }
+  .capa .logo { height: 64px; width: auto; align-self: flex-start; }
+  .entrada { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 18px; color: var(--ink); }
+  .entrada .ic { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: var(--gold-tint); color: var(--gold); }
+  .entrada .ic svg { width: 24px; height: 24px; }
+  .entrada h3 { font-size: 16px; font-weight: 700; }
+  .entrada p { font-size: 13px; color: var(--muted); margin-top: 2px; }
+  .entrada .seta { color: var(--gold); font-size: 20px; font-weight: 700; }
+  .entrada.ink { background: var(--ink); color: #FFFFFF; }
+  .entrada.ink p { color: rgba(255,255,255,.7); }
+  .entrada.ink .ic { background: rgba(255,255,255,.1); color: var(--gold-light); }
+  .entrada.ink .seta { color: var(--gold-light); }
+  .dica { background: var(--gold-tint); border-radius: 16px; padding: 14px 16px; font-size: 13px; color: var(--ink-2); }
+  .rodape { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 12px; color: var(--faint); margin-top: 6px; }
+</style>
+</head>
+<body>
+<main class="capa">
+  <img class="logo" id="logo" src="logo.png" alt="">
+  <div>
+    <span class="eyebrow">Sistema de agendamento</span>
+    <h1 style="margin-top:4px" id="titulo">Agendamento online</h1>
+    <p class="muted" style="margin-top:8px;font-size:14px">A cliente agenda e paga pelo celular. O salão aprova, acompanha a agenda e fecha o caixa do dia.</p>
+  </div>
+
+  <a class="card entrada" href="cliente/">
+    <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
+    <span><h3>App da cliente</h3><p>Escolher serviços, horário e pagar com Pix ou no salão.</p></span><span class="seta">›</span>
+  </a>
+  <a class="card entrada ink" href="salao/">
+    <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11Z"/></svg></span>
+    <span><h3>Painel do salão</h3><p>Aprovar pedidos, agenda, financeiro, serviços e equipe.</p></span><span class="seta">›</span>
+  </a>
+  <a class="card entrada" href="demo/">
+    <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="8" height="16" rx="2"/><rect x="14" y="4" width="8" height="16" rx="2"/></svg></span>
+    <span><h3>Os dois na mesma tela</h3><p>Alterna entre cliente e salão num botão. Bom para apresentar.</p></span><span class="seta">›</span>
+  </a>
+
+  <div class="dica"><b>Como testar:</b> abra o app da cliente e o painel do salão em duas abas deste mesmo aparelho. O pedido feito no app aparece no painel, e a resposta do salão aparece para a cliente.</div>
+
+  <div class="rodape">
+    <span>Demonstração com dados de exemplo.</span>
+    <button class="link" type="button" id="zerar">Zerar demonstração</button>
+  </div>
+  <p class="meta" id="zerado" hidden>Pronto: a demonstração voltou ao início.</p>
+</main>
+<script>
+  const M = window.MARCA;
+  document.title = M.nome + " · Agendamento";
+  document.getElementById("logo").alt = M.nomeCompleto;
+  document.getElementById("titulo").textContent = M.nome + ", agendamento online";
+  document.getElementById("zerar").addEventListener("click", () => {
+    try { localStorage.removeItem("agenda-" + M.chave + "-demo-v1"); } catch (_) {}
+    document.getElementById("zerado").hidden = false;
+  });
+</script>
+</body>
+</html>
