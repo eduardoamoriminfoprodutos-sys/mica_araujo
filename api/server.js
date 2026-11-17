@@ -23,7 +23,7 @@ const MP_TOKEN = process.env.MP_ACCESS_TOKEN || '';                 // da conta 
 const PIX_TESTE = !MP_TOKEN;
 const MP_API = PIX_TESTE ? 'http://127.0.0.1:' + PORT + '/mp-teste' : (process.env.MP_API || 'https://api.mercadopago.com');
 const TESTE_KEY = process.env.TESTE_KEY || '';                      // só modo teste: aprovar um Pix de mentira (testes automáticos)
-const PUBLIC_URL = process.env.PUBLIC_URL || '';                    // ex.: https://api-mica.lecomigo.tech (webhook do MP)
+const PUBLIC_URL = process.env.PUBLIC_URL || '';                    // ex.: https://mica.lecomigo.tech (webhook do MP)
 const ORIGENS = (process.env.ALLOWED_ORIGINS || '').split(',').map(s => s.trim()).filter(Boolean);
 const TZ = 'America/Belem';
 

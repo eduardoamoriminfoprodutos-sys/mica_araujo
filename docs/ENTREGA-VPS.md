@@ -1,6 +1,6 @@
 # Entrega: colocar o sistema do Studio Mica Araujo no ar, sincronizado pela VPS
 
-> **Situação (16/11/2026): ainda não está na VPS.** O servidor (`api/`) é o mesmo já em uso no salão Favorita (repositório `favorita`, pasta `/var/www/favorita`, porta 3020). Monte um ambiente **separado** para o Studio, seguindo a tabela abaixo, sem encostar no da Favorita. `marca.js` ainda **não tem `api`**: enquanto não tiver, `cliente/` e `salao/` funcionam como demonstração no navegador. Ao subir o servidor, acrescente `api: "https://api-mica.lecomigo.tech"`. Teste local completo: `testes/ambiente-local.mjs`.
+> **Situação (16/11/2026): ainda não está na VPS.** O servidor (`api/`) é o mesmo já em uso no salão Favorita (repositório `favorita`, pasta `/var/www/favorita`, porta 3020). Monte um ambiente **separado** para o Studio, seguindo a tabela abaixo, sem encostar no da Favorita. `marca.js` ainda **não tem `api`**: enquanto não tiver, `cliente/` e `salao/` funcionam como demonstração no navegador. Ao subir o servidor, acrescente `api: "https://mica.lecomigo.tech"`. Teste local completo: `testes/ambiente-local.mjs`.
 
 Este documento é para o Claude do VS Code. Objetivo: transformar a demonstração (que hoje guarda tudo no navegador) em **sistema de verdade**, com **ambiente exclusivo do Studio na VPS do Eduardo**: pasta própria, banco próprio, processo próprio e endereço próprio, **igual ao DM Espetinho**, sem encostar nos outros sistemas.
 
@@ -26,12 +26,12 @@ Este documento é para o Claude do VS Code. Objetivo: transformar a demonstraç�
 | Pasta | `/var/www/mica-araujo/` com `api/` (servidor) e `site/` (cópia do front-end) |
 | Banco | Postgres: banco **`mica`**, usuário **`mica`** com senha própria, dono só desse banco |
 | Processo | pm2 **`mica-api`**, porta livre (ex.: **3021**; a 3010 é da Central e a 3020 da Favorita; confirme com `ss -ltnp`) |
-| API | `https://api-mica.lecomigo.tech` (Nginx + certbot) |
-| Site (opcional) | `https://mica.lecomigo.tech` servindo `site/`, ou continuar no GitHub Pages apontando para a API |
-| `.env` | `PORT`, `DATABASE_URL`, `AUTH_SECRET`, `MP_ACCESS_TOKEN` (**da conta do salão**, vazio até a dona passar), `MP_API`, `PUBLIC_URL`, `ALLOWED_ORIGINS` (domínio do site e do GitHub Pages) |
+| Servidor | `https://mica.lecomigo.tech` (Nginx + certbot), igual à Favorita (`favorita.lecomigo.tech`) |
+| App | GitHub Pages do repositório: `https://eduardoamoriminfoprodutos-sys.github.io/mica_araujo/` (`cliente/` e `salao/`), falando com o servidor |
+| `.env` | `PORT`, `DATABASE_URL`, `AUTH_SECRET`, `MP_ACCESS_TOKEN` (**da conta do salão**, vazio até a dona passar), `MP_API`, `PUBLIC_URL`, `ALLOWED_ORIGINS` (`https://eduardoamoriminfoprodutos-sys.github.io`) |
 | Backup | `pg_dump` diário do banco `mica` (cron), guardando 7 dias |
 
-O DNS dos subdomínios (`api-mica` e `mica`) é criado no painel do domínio `lecomigo.tech`: **peça ao Eduardo** se não tiver acesso.
+O DNS do subdomínio `mica` é criado no painel do domínio `lecomigo.tech`: **peça ao Eduardo** se não tiver acesso.
 
 ## Banco de dados (tabelas)
 
@@ -93,12 +93,12 @@ O app da cliente e o painel precisam se atualizar sozinhos (pedido novo aparece 
   - `carregar()` → busca catálogo, agendamentos (da cliente ou da dona) e preenche `S`, `SERVICES`, `PROS`, `CATS`;
   - as ações que hoje mudam `S` direto (aprovar, reprovar, criar agendamento, salvar serviço etc., em `cliente/cliente.js` e `salao/salao.js`) passam a chamar a rota correspondente e, na resposta, atualizar `S` e chamar `render()`.
 - Tirar a tela "Simular Pix pago" (`vPix` em `cliente/cliente.js`) e usar o status real do Pix.
-- O endereço da API entra em `marca.js` (ex.: `api: "https://api-mica.lecomigo.tech"`), para cada salão ter o seu.
+- O endereço da API entra em `marca.js` (ex.: `api: "https://mica.lecomigo.tech"`), para cada salão ter o seu.
 - Manter o visual e os testes (`testes/`). Ajustar os testes para rodarem contra uma API de teste.
 
 ## Ordem sugerida
 
-1. Criar na VPS: pasta, banco, usuário do banco, `.env` e pm2 `mica-api` com um `GET /health`. Nginx + SSL em `api-mica.lecomigo.tech`.
+1. Criar na VPS: pasta, banco, usuário do banco, `.env` e pm2 `mica-api` com um `GET /health`. Nginx + SSL em `mica.lecomigo.tech`.
 2. Schema + rotas públicas e de admin, sem Pix (pagamento no salão), testando com `curl`.
 3. Trocar `comum/dados.js` e as ações para usar a API. Publicar o site.
 4. Pix com Mercado Pago **em modo teste** (simulador do DM: `MP_API` apontando para um simulador local); estorno.
